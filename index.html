@@ -9,7 +9,9 @@
 <body>
     <header class="site-header" id="top">
         <div class="branding">
-            <a class="logo" href="#top">LKF</a>
+            <a class="logo" href="#top">
+                <img src="assets/icons/logo.png" alt="Leonardo Kanashiro Felizardo logo">
+            </a>
             <div>
                 <h1>Leonardo Kanashiro Felizardo</h1>
                 <p>Senior Data Scientist · Machine Learning Researcher · Ph.D.</p>
@@ -30,6 +32,18 @@
     <main>
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-content">
+                <h2 id="hero-title">Driving decisions with machine learning and operations research</h2>
+                <p class="hero-lede">Postdoctoral researcher and senior data scientist with a focus on reinforcement learning, stochastic optimization, and high-impact data products across pricing, supply chain, and financial domains.</p>
+                <p class="hero-lede">Experience spans strategic pricing initiatives, perishable inventory research, and cross-functional leadership that bridges product, engineering, and science teams.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#professional">View Experience</a>
+                    <a class="button secondary" href="https://arxiv.org/abs/2504.05150" target="_blank" rel="noopener">Latest Publication</a>
+                </div>
+            </div>
+            <div class="hero-media" aria-label="Profile photo">
+                <figure class="profile-figure" role="presentation">
+                    <img src="assets/images/profile.png" alt="Portrait of Leonardo Kanashiro Felizardo">
+                </figure>
                 <div class="social-links hero-social" aria-label="Social profiles">
                     <a class="social-link" href="https://orcid.org/0000-0002-2871-860X" target="_blank" rel="noopener" aria-label="ORCID">
                         <figure class="icon-slot" role="presentation"><img src="assets/icons/orcid_icon.png" alt=""></figure>
@@ -47,33 +61,13 @@
                         <figure class="icon-slot" role="presentation"><img src="assets/icons/rg_icon.png" alt=""></figure>
                     </a>
                 </div>
-                <h2 id="hero-title">Driving decisions with machine learning and operations research</h2>
-                <p>Postdoctoral researcher and senior data scientist with a focus on reinforcement learning, stochastic optimization, and high-impact data products across pricing, supply chain, and financial domains.</p>
-                <div class="hero-actions">
-                    <a class="button primary" href="#professional">View Experience</a>
-                    <a class="button secondary" href="https://arxiv.org/abs/2504.05150" target="_blank" rel="noopener">Latest Publication</a>
-                </div>
-            </div>
-            <div class="hero-badges" aria-label="Highlights">
-                <article class="badge">
-                    <h3>Strategic Pricing</h3>
-                    <p>Optimizing margins at scale through experiment-driven modeling.</p>
-                </article>
-                <article class="badge">
-                    <h3>Applied Research</h3>
-                    <p>Post-decision reinforcement learning for perishable inventory.</p>
-                </article>
-                <article class="badge">
-                    <h3>Collaborative Leadership</h3>
-                    <p>Bridging product, engineering, and science teams globally.</p>
-                </article>
             </div>
         </section>
 
         <section class="section" id="professional" aria-labelledby="professional-title">
             <div class="section-heading">
                 <h2 id="professional-title">Professional</h2>
-                <p>Recent roles blending scientific rigor, experimentation, and product strategy.</p>
+                <p>All the professional roles I have held, both nationally and internationally, across corporate and academic sectors.</p>
             </div>
             <div class="timeline">
                 <article class="timeline-item">
@@ -122,7 +116,7 @@
                 <article class="timeline-item">
                     <header>
                         <h3>Machine Learning Researcher · Polytechnic of Turin</h3>
-                        <span class="meta">Dec 2020 – Present · Turin, Italy</span>
+                        <span class="meta">Dec 2020 – 2024 · Turin, Italy</span>
                     </header>
                     <ul>
                         <li>Dual Ph.D. collaboration tackling discrete lot-sizing with RL and dynamic programming.</li>
@@ -132,7 +126,7 @@
                 <article class="timeline-item">
                     <header>
                         <h3>Machine Learning Researcher · University of São Paulo</h3>
-                        <span class="meta">Mar 2018 – Present · São Paulo, Brazil</span>
+                        <span class="meta">Mar 2018 – 2024 · São Paulo, Brazil</span>
                     </header>
                     <ul>
                         <li>Compared supervised learning and RL techniques for financial decision-making.</li>
@@ -201,60 +195,115 @@
                 <p>Selected publications covering reinforcement learning, optimization, and forecasting.</p>
             </div>
             <div class="publications">
-                <article class="publication">
-                    <h3><a href="https://arxiv.org/abs/2504.05150" target="_blank" rel="noopener">Post-Decision PPO with Dual Critic Networks</a></h3>
-                    <p class="meta">arXiv preprint · April 2025</p>
-                    <p>Reinforcement learning method for stochastic environments emphasizing post-decision states.</p>
+                <article class="publication publication-featured" data-preview="post-decision-ppo.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/post-decision-ppo.png" alt="Post-Decision PPO with Dual Critic Networks">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://arxiv.org/abs/2504.05150" target="_blank" rel="noopener">Post-Decision PPO with Dual Critic Networks</a></h3>
+                            <p class="meta">arXiv preprint · April 2025</p>
+                            <p>Reinforcement learning method for stochastic environments emphasizing post-decision states.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://doi.org/10.1016/j.eswa.2023.123036" target="_blank" rel="noopener">Reinforcement Learning for Stochastic Lot-Sizing</a></h3>
-                    <p class="meta">Expert Systems with Applications · January 2024</p>
-                    <p>Hybrid dynamic programming and RL approach to discrete lot-sizing on parallel machines.</p>
+                <article class="publication publication-featured" data-preview="stochastic-lot-sizing.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/stochastic-lot-sizing.png" alt="Reinforcement Learning for Stochastic Lot-Sizing">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://doi.org/10.1016/j.eswa.2023.123036" target="_blank" rel="noopener">Reinforcement Learning for Stochastic Lot-Sizing</a></h3>
+                            <p class="meta">Expert Systems with Applications · January 2024</p>
+                            <p>Hybrid dynamic programming and RL approach to discrete lot-sizing on parallel machines.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://doi.org/10.1016/j.cor.2023.106270" target="_blank" rel="noopener">Simulation-Based Inventory Management</a></h3>
-                    <p class="meta">Computers & Operations Research · September 2023</p>
-                    <p>Linear discrete choice models for perishable products in stochastic demand settings.</p>
+                <article class="publication publication-featured" data-preview="simulation-inventory.jpg">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/simulation-inventory.jpg" alt="Simulation-Based Inventory Management">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://doi.org/10.1016/j.cor.2023.106270" target="_blank" rel="noopener">Simulation-Based Inventory Management</a></h3>
+                            <p class="meta">Computers & Operations Research · September 2023</p>
+                            <p>Linear discrete choice models for perishable products in stochastic demand settings.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://arxiv.org/abs/2212.06064" target="_blank" rel="noopener">Reinforcement Learning Applied to Trading Systems</a></h3>
-                    <p class="meta">arXiv preprint · December 2022</p>
-                    <p>Comprehensive survey of RL strategies for algorithmic trading.</p>
+                <article class="publication publication-featured" data-preview="rl-trading-survey.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/rl-trading-survey.png" alt="Reinforcement Learning Applied to Trading Systems">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://arxiv.org/abs/2212.06064" target="_blank" rel="noopener">Reinforcement Learning Applied to Trading Systems</a></h3>
+                            <p class="meta">arXiv preprint · December 2022</p>
+                            <p>Comprehensive survey of RL strategies for algorithmic trading.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://doi.org/10.5753/eniac.2022" target="_blank" rel="noopener">Deep Learning Stacking for Financial Forecasting</a></h3>
-                    <p class="meta">ENIAC 2022 · November 2022</p>
-                    <p>Stacked neural architectures outperforming baselines in financial time series prediction.</p>
+                <article class="publication publication-featured" data-preview="deep-learning-stacking.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/deep-learning-stacking.png" alt="Deep Learning Stacking for Financial Forecasting">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://doi.org/10.5753/eniac.2022" target="_blank" rel="noopener">Deep Learning Stacking for Financial Forecasting</a></h3>
+                            <p class="meta">ENIAC 2022 · November 2022</p>
+                            <p>Stacked neural architectures outperforming baselines in financial time series prediction.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://doi.org/10.1109/IJCNN55064.2022.9892333" target="_blank" rel="noopener">RL for Optimal Stopping in Options</a></h3>
-                    <p class="meta">IJCNN · July 2022</p>
-                    <p>Reinforcement learning strategy for exercising financial options under uncertainty.</p>
+                <article class="publication publication-featured" data-preview="rl-optimal-stopping.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/rl-optimal-stopping.png" alt="RL for Optimal Stopping in Options">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://doi.org/10.1109/IJCNN55064.2022.9892333" target="_blank" rel="noopener">RL for Optimal Stopping in Options</a></h3>
+                            <p class="meta">IJCNN · July 2022</p>
+                            <p>Reinforcement learning strategy for exercising financial options under uncertainty.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://doi.org/10.1016/j.eswa.2022.117259" target="_blank" rel="noopener">Sentiment-Aware Trading Agents</a></h3>
-                    <p class="meta">Expert Systems with Applications · September 2022</p>
-                    <p>Supervised learning approach outperforming RL systems in cryptocurrency trading.</p>
+                <article class="publication publication-featured" data-preview="outperforming-rl.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/outperforming-rl.png" alt="Outperforming Algorithmic Trading RL Systems">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://doi.org/10.1016/j.eswa.2022.117259" target="_blank" rel="noopener">Outperforming Algorithmic Trading Reinforcement Learning Systems</a></h3>
+                            <p class="meta">Expert Systems with Applications · September 2022</p>
+                            <p>A supervised framework that surpasses reinforcement learning traders in cryptocurrency markets.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://doi.org/10.1016/j.ifacol.2022.10.115" target="_blank" rel="noopener">Inventory Management with Substitution</a></h3>
-                    <p class="meta">IFAC MIM · 2022</p>
-                    <p>Stock-out substitution modeling for vertically differentiated perishables.</p>
+                <article class="publication publication-featured" data-preview="inventory-substitution.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/inventory-substitution.png" alt="Inventory Management with Substitution">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://doi.org/10.1016/j.ifacol.2022.10.115" target="_blank" rel="noopener">Inventory Management with Substitution</a></h3>
+                            <p class="meta">IFAC MIM · 2022</p>
+                            <p>Stock-out substitution modeling for vertically differentiated perishables.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://doi.org/10.1145/3490354.3494445" target="_blank" rel="noopener">Sentiment-Aware RL for Finance</a></h3>
-                    <p class="meta">ICAIF · 2021</p>
-                    <p>Hybrid sentiment and reinforcement learning framework for intelligent trading systems.</p>
+                <article class="publication publication-featured" data-preview="sentiment-aware-finance.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/sentiment-aware-finance.png" alt="Intelligent Trading Systems Sentiment-Aware RL">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://doi.org/10.1145/3490354.3494445" target="_blank" rel="noopener">Intelligent Trading Systems: A Sentiment-Aware Reinforcement Learning Approach</a></h3>
+                            <p class="meta">ICAIF · 2021</p>
+                            <p>Conference contribution blending investor sentiment with reinforcement learning for adaptive trading agents.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://ieeexplore.ieee.org/abstract/document/8963009" target="_blank" rel="noopener">Comparing ML for Bitcoin Forecasting</a></h3>
-                    <p class="meta">BESC · 2019</p>
-                    <p>WaveNet, RNN, and ML baselines evaluated for Bitcoin price prediction.</p>
+                <article class="publication publication-featured" data-preview="bitcoin-forecasting.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/bitcoin-forecasting.png" alt="Comparing ML for Bitcoin Forecasting">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://ieeexplore.ieee.org/abstract/document/8963009" target="_blank" rel="noopener">Comparing ML for Bitcoin Forecasting</a></h3>
+                            <p class="meta">BESC · 2019</p>
+                            <p>WaveNet, RNN, and ML baselines evaluated for Bitcoin price prediction.</p>
+                        </figcaption>
+                    </figure>
                 </article>
-                <article class="publication">
-                    <h3><a href="https://arxiv.org/abs/1901.09143" target="_blank" rel="noopener">Neural Architecture for Brazilian Stocks</a></h3>
-                    <p class="meta">ENANPAD · 2017</p>
-                    <p>Study of neural networks applied to forecasting Brazilian stock returns.</p>
+                <article class="publication publication-featured" data-preview="brazilian-stocks.png">
+                    <figure class="publication-figure">
+                        <img src="assets/previews/brazilian-stocks.png" alt="Neural Architecture for Brazilian Stocks">
+                        <figcaption class="publication-featured-overlay">
+                            <h3><a href="https://arxiv.org/abs/1901.09143" target="_blank" rel="noopener">Neural Architecture for Brazilian Stocks</a></h3>
+                            <p class="meta">ENANPAD · 2017</p>
+                            <p>Study of neural networks applied to forecasting Brazilian stock returns.</p>
+                        </figcaption>
+                    </figure>
                 </article>
             </div>
         </section>

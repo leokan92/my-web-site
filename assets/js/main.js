@@ -2,6 +2,14 @@ const navToggle = document.querySelector('.nav-toggle');
 const siteMenu = document.querySelector('#site-menu');
 const currentYearEl = document.querySelector('#current-year');
 
+const publicationCards = document.querySelectorAll('.publication[data-preview]');
+publicationCards.forEach((card) => {
+    const preview = card.getAttribute('data-preview');
+    if (preview) {
+        card.style.setProperty('--preview', `url("../previews/${preview}")`);
+    }
+});
+
 if (navToggle && siteMenu) {
     navToggle.addEventListener('click', () => {
         const expanded = navToggle.getAttribute('aria-expanded') === 'true';
