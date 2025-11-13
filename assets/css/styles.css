@@ -250,6 +250,7 @@ a:focus {
     padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 6vw, 5rem);
     border-bottom: 1px solid var(--border);
     background: var(--bg);
+    scroll-margin-top: clamp(80px, 12vw, 140px);
 }
 
 .section.highlight {
@@ -361,7 +362,7 @@ a:focus {
     overflow: hidden;
     border: 1px solid var(--border);
     position: relative;
-    height: clamp(220px, 28vw, 280px);
+    height: clamp(260px, 32vw, 320px);
 }
 
 .publication-featured .publication-figure img {
@@ -376,7 +377,7 @@ a:focus {
     position: absolute;
     inset: 0;
     padding: 1.5rem;
-    background: linear-gradient(180deg, rgba(12, 13, 18, 0.0) 0%, rgba(12, 13, 18, 0.92) 45%, rgba(12, 13, 18, 0.76) 100%);
+    background: linear-gradient(180deg, rgba(12, 13, 18, 0.20) 0%, rgba(12, 13, 18, 0.92) 45%, rgba(12, 13, 18, 0.76) 100%);
     color: #f7f7fa;
     display: flex;
     flex-direction: column;
@@ -550,12 +551,18 @@ a:focus {
 @media (max-width: 900px) {
     .site-header {
         flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .site-nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
     }
 
     .site-nav ul {
         position: absolute;
-        left: 50%;
-        right: auto;
+        right: clamp(1rem, 5vw, 2rem);
         top: 120%;
         background: rgba(247, 247, 250, 0.97);
         padding: 1rem 1.5rem;
@@ -565,7 +572,7 @@ a:focus {
         gap: 1rem;
         min-width: 200px;
         width: min(280px, 90vw);
-        transform: translate(-50%, -10px);
+        transform: translateY(-10px);
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.2s ease, transform 0.2s ease;

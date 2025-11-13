@@ -23,8 +23,38 @@ if (currentYearEl) {
 }
 
 const links = document.querySelectorAll('a[href^="#"]');
+const siteHeader = document.querySelector('.site-header');
+
+const getHeaderOffset = () => {
+    if (!siteHeader) {
+        return 0;
+    }
+
+    const computedStyles = window.getComputedStyle(siteHeader);
+    const marginBottom = parseFloat(computedStyles.marginBottom) || 0;
+
+    return siteHeader.offsetHeight + marginBottom + 12;
+};
+
 links.forEach((link) => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href') || '';
+
+        if (href === '#top') {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (href.startsWith('#') && href.length > 1) {
+            const target = document.querySelector(href);
+            if (target) {
+                event.preventDefault();
+                const headerOffset = getHeaderOffset();
+                const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+                const targetScrollPosition = Math.max(elementPosition - headerOffset, 0);
+
+                window.scrollTo({ top: targetScrollPosition, behavior: 'smooth' });
+            }
+        }
+
         if (navToggle && siteMenu && navToggle.getAttribute('aria-expanded') === 'true') {
             navToggle.setAttribute('aria-expanded', 'false');
             siteMenu.setAttribute('aria-expanded', 'false');
