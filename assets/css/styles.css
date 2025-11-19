@@ -309,10 +309,16 @@ a:focus {
 
 .timeline-heading {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    min-width: 0;
+}
+
+.timeline-heading h3 {
+    flex: 1;
+    min-width: 0;
 }
 
 .timeline-item {
