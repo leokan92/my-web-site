@@ -61,3 +61,78 @@ links.forEach((link) => {
         }
     });
 });
+
+// Show-more / Load-more functionality for section grids
+(function() {
+    const defaultStep = 6;
+    const buttons = document.querySelectorAll('.load-more');
+
+    if (!buttons || buttons.length === 0) return;
+
+    buttons.forEach((btn) => {
+        const targetSelector = btn.getAttribute('data-target');
+        const step = parseInt(btn.getAttribute('data-step'), 10) || defaultStep;
+        const container = document.querySelector(targetSelector);
+
+        if (!container) {
+            // Nothing to control, hide the button
+            btn.style.display = 'none';
+            return;
+        }
+
+        let items = Array.from(container.children).filter((c) => {
+            return c.classList.contains('publication') ||
+                c.classList.contains('publication-featured') ||
+                c.classList.contains('project-card') ||
+                c.classList.contains('timeline-item') ||
+                c.classList.contains('card');
+        });
+
+        if (items.length === 0) {
+            // fallback to article children
+            items = Array.from(container.querySelectorAll('article'));
+        }
+
+        if (items.length <= step) {
+            // nothing to hide
+            btn.style.display = 'none';
+            return;
+        }
+
+        let visible = step;
+
+        const update = () => {
+            items.forEach((it, idx) => {
+                if (idx < visible) {
+                    it.style.display = '';
+                } else {
+                    it.style.display = 'none';
+                }
+            });
+
+            if (visible >= items.length) {
+                btn.style.display = 'none';
+            } else {
+                btn.style.display = '';
+            }
+
+            btn.setAttribute('aria-expanded', String(visible > step));
+        };
+
+        // initial state
+        update();
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const prevVisible = visible;
+            visible = Math.min(visible + step, items.length);
+            update();
+
+            // scroll to the first newly revealed item for context
+            const firstNew = items[prevVisible];
+            if (firstNew) {
+                firstNew.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+})();

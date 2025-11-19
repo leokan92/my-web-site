@@ -307,12 +307,47 @@ a:focus {
     gap: 2rem;
 }
 
+.timeline-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 .timeline-item {
     padding: 1.8rem;
     border-radius: var(--radius);
     background: var(--card-bg);
     border: 1px solid var(--border);
     box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+.institution-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg-alt);
+    padding: 0.4rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.institution-link:hover,
+.institution-link:focus-visible {
+    border-color: rgba(76, 110, 245, 0.5);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.institution-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .timeline-item header {
@@ -597,6 +632,16 @@ a:focus {
     text-align: center;
     color: var(--muted);
     font-size: 0.9rem;
+}
+
+.show-more-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.load-more[aria-expanded="true"] {
+    /* small visual hint when expanded */
+    opacity: 0.95;
 }
 
 @media (max-width: 600px) {
