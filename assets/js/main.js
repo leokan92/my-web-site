@@ -136,3 +136,84 @@ links.forEach((link) => {
         });
     });
 })();
+
+// Lightweight analytics helpers for GA4 events
+(function() {
+    const emitEvent = (eventName, params = {}) => {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, params);
+        }
+    };
+
+    const getSectionName = (section) => {
+        const labelledBy = section.getAttribute('aria-labelledby');
+        if (labelledBy) {
+            const heading = document.getElementById(labelledBy);
+            if (heading) {
+                return heading.textContent.trim();
+            }
+        }
+        const heading = section.querySelector('h2');
+        return heading ? heading.textContent.trim() : section.id;
+    };
+
+    const initButtonTracking = () => {
+        const trackableButtons = document.querySelectorAll('button, .button, a.button');
+        trackableButtons.forEach((btn) => {
+            if (btn.dataset.analyticsBound === 'true') return;
+            btn.dataset.analyticsBound = 'true';
+
+            btn.addEventListener('click', () => {
+                const label = (btn.getAttribute('aria-label') || btn.textContent || '').trim() || 'button';
+                emitEvent('button_click', {
+                    label,
+                    element_id: btn.id || undefined,
+                    element_classes: btn.className || undefined,
+                });
+            });
+        });
+    };
+
+    const initSectionTracking = () => {
+        const sections = document.querySelectorAll('section[id]');
+        if (sections.length === 0) return;
+        const seen = new Set();
+
+        const markSeen = (section) => {
+            const sectionId = section.id || 'unknown-section';
+            if (seen.has(sectionId)) return;
+            seen.add(sectionId);
+            emitEvent('section_view', {
+                section_id: sectionId,
+                section_name: getSectionName(section),
+            });
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+                        markSeen(entry.target);
+                    }
+                });
+            }, { threshold: [0.35] });
+
+            sections.forEach((section) => observer.observe(section));
+        } else {
+            sections.forEach((section) => markSeen(section));
+        }
+    };
+
+    const onReady = (callback) => {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', callback, { once: true });
+        } else {
+            callback();
+        }
+    };
+
+    onReady(() => {
+        initButtonTracking();
+        initSectionTracking();
+    });
+})();
